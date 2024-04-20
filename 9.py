@@ -19,7 +19,7 @@ def normal_approximation_to_binomial():
     plt.legend()
     plt.show()
 
-# Part (b): Sum of Two Normal Random Variables
+# Part (b): Sum of Two Normal Random Vars
 def sum_of_two_normals():
     normal1 = norm.rvs(loc=0, scale=2, size=num_samples)
     normal2 = norm.rvs(loc=0, scale=3, size=num_samples)
@@ -30,7 +30,7 @@ def sum_of_two_normals():
     plt.title('Sum of Two Normal Random Variables')
     plt.show()
 
-# Part (c): Density of the Sum of Two Uniform [0,1] Random Variables
+# Part (c): Density of the Sum of Two Uniform [0,1] Random Vars
 def density_of_sum_of_uniforms():
     uniform1 = np.random.uniform(low=0.0, high=1.0, size=num_samples)
     uniform2 = np.random.uniform(low=0.0, high=1.0, size=num_samples)
@@ -41,7 +41,7 @@ def density_of_sum_of_uniforms():
     plt.title('Density of Sum of Two Uniform [0,1] Random Variables')
     plt.show()
 
-# Part (d): Distribution of the Sum of Dice Rolls Approaching Normal Distribution
+# Part (d): Distr of the Sum of Dice Rolls Approaching Normal Distr
 def dice_rolls_convergence():
     dice_counts = [2, 5, 10, 20, 40, 80]
     for count in dice_counts:
@@ -54,7 +54,6 @@ def dice_rolls_convergence():
         plt.grid(True)
         plt.show()
 
-# Execute the functions
 normal_approximation_to_binomial()
 sum_of_two_normals()
 density_of_sum_of_uniforms()
