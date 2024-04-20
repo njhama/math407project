@@ -29,7 +29,7 @@ plt.figure(figsize=(8, 5))
 # [-250, -150] = -200
 # [-150,-50] = 0
 # [50, 150] = 100
-plt.hist(price_fluctuations, bins=[-250, -150, -50, 50, 150], weights=weights, align='mid', color='blue', rwidth=0.8)
+plt.hist(price_fluctuations, bins=[-250, -150, -50, 50, 150], weights=weights, align='mid', color='pink', rwidth=0.8)
 plt.title('Daily Price Fluctuations')
 plt.xlabel('Price Fluctuation')
 plt.ylabel('Percentage (%) = 1')
