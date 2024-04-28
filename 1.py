@@ -13,7 +13,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # params
-a = 75
+a = 7**5
 c = 0
 m = 2**31 - 1
 n_samples = 10000
