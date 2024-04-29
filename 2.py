@@ -11,7 +11,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 numbers_to_gen = 10000
-
 uniform_numbers = np.random.rand(numbers_to_gen)
 
 def map_to_fluctuations(uniform_numbers):
