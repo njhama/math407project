@@ -2,21 +2,34 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import binom, norm
 
-# Parameters
+# Params
 num_samples = 10000
 
-# Part (a): Normal Approximation Binomial Distribution
+# Part a): Normal Approximation Binomial Distribution
 def normal_approximation_to_binomial():
-    n = 100  # num trials
-    p = 0.5  # probab success
-    binomial_data = binom.rvs(n, p, size=num_samples)
-    normal_approx = norm.rvs(loc=n*p, scale=np.sqrt(n*p*(1-p)), size=num_samples)
+    n = 1000  # number of trials
+    p = 0.5  # probability of success
+    mu = n * p
+    sigma = np.sqrt(n * p * (1 - p))
+    binomial_data = binom.rvs(n, p, size=10000)
+    #normal_data = norm.rvs(loc=mu, scale=sigma, size=10000)
+    bins = np.linspace(min(binomial_data), max(binomial_data), 30)
     
+    # Set up the figure and axes for plotting
     plt.figure(figsize=(12, 6))
-    plt.hist(binomial_data, bins=30, alpha=0.5, label='Binomial', color='blue')
-    plt.hist(normal_approx, bins=30, alpha=0.5, label='Normal Approx', color='red')
-    plt.title('Normal Approximation 4 Binomial Distribution')
+
+    plt.hist(binomial_data, bins=bins, alpha=0.5, color='blue', label='Binomial Distribution', density=True)
+
+    # Calculate the normal density function 
+    x = np.linspace(min(binomial_data), max(binomial_data), 1000)
+    pdf = norm.pdf(x, mu, sigma)
+
+    plt.plot(x, pdf, 'r-', lw=2, label='Normal Approximation')
+    plt.title('Normal Approximation to Binomial Distribution')
+    plt.xlabel('Number of Successes')
+    plt.ylabel('Probability Density')
     plt.legend()
+    plt.grid(True)
     plt.show()
 
 # Part (b): Sum of Two Normal Random Vars
